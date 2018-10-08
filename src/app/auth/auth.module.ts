@@ -17,7 +17,7 @@ export const ROUTES: Routes = [
       },
       {
         path: 'register',
-        loadChildren: './register/register.module#Register Module'
+        loadChildren: './register/register.module#RegisterModule'
       }
     ]
   }

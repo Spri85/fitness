@@ -17,7 +17,7 @@ export const ROUTES: Routes = [];
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, RouterModule.forRoot(ROUTES)],
+  imports: [BrowserModule, RouterModule.forRoot(ROUTES), AuthModule],
   providers: [Store],
   bootstrap: [AppComponent]
 })
