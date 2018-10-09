@@ -11,12 +11,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
         <label>
           <input 
             type="email" 
+            autocomplete="username"
             placeholder="Email address"
             formControlName="email">
         </label>
         <label>
           <input
             type="password"
+            autocomplete="new-password"
             placeholder="Enter password"
             formControlName="password">
         </label>
