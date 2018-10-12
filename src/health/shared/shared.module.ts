@@ -5,12 +5,16 @@ import { RouterModule } from '@angular/router';
 // third-party modules
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+// Components
+import { ListItemComponent } from './components/list-item/list-item.component';
+
+// Services
 import { MealsService } from './services/meals/meals.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [ListItemComponent],
   imports: [CommonModule, AngularFireDatabaseModule, RouterModule],
-  exports: [],
+  exports: [ListItemComponent],
   providers: []
 })
 export class SharedModule {
