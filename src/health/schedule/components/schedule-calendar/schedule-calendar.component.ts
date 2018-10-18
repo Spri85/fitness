@@ -7,7 +7,10 @@ import {
   OnChanges
 } from '@angular/core';
 
-import { ScheduleItem } from '../../../shared/services/schedule/schedule.service';
+import {
+  ScheduleItem,
+  ScheduleList
+} from '../../../shared/services/schedule/schedule.service';
 
 @Component({
   selector: 'schedule-calendar',
@@ -19,6 +22,9 @@ export class ScheduleCalendarComponent implements OnInit, OnChanges {
   set date(date: Date) {
     this.selectedDay = new Date(date.getTime());
   }
+
+  @Input()
+  items: ScheduleList;
 
   @Output()
   change = new EventEmitter<Date>();
@@ -53,7 +59,9 @@ export class ScheduleCalendarComponent implements OnInit, OnChanges {
     this.change.emit(startDate);
   }
 
-  getSection(name: string): ScheduleItem {}
+  getSection(name: string): ScheduleItem {
+    return (this.items && this.items[name]) || {};
+  }
 
   selectDay(index: number) {
     const selectedDay = new Date(this.selectedWeek);
